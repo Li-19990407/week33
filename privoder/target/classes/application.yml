@@ -1,0 +1,46 @@
+dubbo:
+  application:
+    #id: dubbo-provider
+    name: dubbo-provider  #应用名称
+    #owner: aggerChen      #应用所属者
+    #organization: agger   #应用所属组织
+  registry:
+    address: N/A
+    #id: zookeeper-registry #注册中心id
+    #protocol: zookeeper    #注册中心协议
+    #address: zookeeper://127.0.0.1:2181 #注册中心地址
+  #metadata-report:
+    #address: zookeeper://127.0.0.1:2181
+    #address: N/A
+  protocol:
+    name: dubbo   #协议名称
+    port: 20880   #协议端口
+    accesslog: dubbo-access.log #协议访问log
+  provider:
+    retries: 0    #重试次数
+    timeout: 3000 #超时时间
+  #monitor:
+    #protocol: registry # 注册监控中心
+
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/week33?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8087
+data:
+  elasticsearch:
+    cluster-name: elasticsearch
+    cluster-nodes: localhost:9300
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: redis
